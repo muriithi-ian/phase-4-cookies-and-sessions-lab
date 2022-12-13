@@ -37,6 +37,10 @@ module Phase4CookiesAndSessionsLab
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true    
 
+    #sessions
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+
     # Adding back cookies and session middleware
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
